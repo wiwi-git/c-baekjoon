@@ -10,7 +10,7 @@
 /**
  q1924 2007년
  */
-
+/*
 void solution(void) {
     // 1. month, day 입력받기 int, int
     int month = 0;
@@ -78,3 +78,29 @@ int main(int argc, const char * argv[]) {
     solution();
     return 0;
 }
+*/
+
+void solution(void) {
+    int month, day;
+    scanf("%d %d", &month, &day);
+
+    // 2007년의 각 월 일수
+    int daysInMonth[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+
+    // 시작 요일 배열
+    const char *week[7] = {"SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"};
+
+    int total = 0;
+    for (int i = 0; i < month - 1; i++)
+        total += daysInMonth[i];
+
+    total += day;
+
+    printf("%s\n", week[total % 7]);
+}
+
+int main(int argc, const char * argv[]) {
+    solution();
+    return 0;
+}
+
