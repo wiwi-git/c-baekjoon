@@ -33,7 +33,7 @@ int match(int target, int base, int max) {
 int findMulSun(int sun, int moon, int earth) {
     int i = 0;
     while (1) {
-        int mulSun = 28 * i + sun;
+        int mulSun = SBASE * i + sun;
         i ++;
         
         // find moon
